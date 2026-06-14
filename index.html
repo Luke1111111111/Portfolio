@@ -14,7 +14,7 @@
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e293b;
-            --bg-color: #9ccdff;
+            --bg-color: #82C8E5;
             --text-color: #334155;
             --white: #ffffff;
             --card-bg: #ffffff;
@@ -595,39 +595,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- FOND PIXELISÉ ANIMÉ --- */
-        body::before,
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            width: 200px;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            background-image:
-                linear-gradient(var(--pixel-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--pixel-color) 1px, transparent 1px);
-            background-size: 20px 20px;
-            animation: pixelScroll 8s linear infinite;
-            opacity: 0.15;
-        }
-
-        body::before { left: 0; }
-        body::after  { right: 0; animation-direction: reverse; }
-
-        :root {
-            --pixel-color: #2563eb;
-        }
-
-        body.dark-mode {
-            --pixel-color: #60a5fa;
-        }
-
-        @keyframes pixelScroll {
-            from { background-position: 0 0; }
-            to   { background-position: 0 100px; }
-        }
 
         /* --- ÉTOILES FILANTES --- */
         .stars {
@@ -695,7 +662,71 @@
             50% { opacity: 0.6; }
         }
 
+        /* --- NUAGES --- */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
 
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0;
+            animation: floatCloud linear infinite;
+            animation-fill-mode: both;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cloud::before {
+            width: 60%;
+            height: 150%;
+            top: -50%;
+            left: 15%;
+        }
+
+        .cloud::after {
+            width: 40%;
+            height: 120%;
+            top: -35%;
+            right: 15%;
+        }
+
+        .cloud-1 { width: 200px; height: 50px; top: 8%;  animation-duration: 20s; animation-delay: 0s;   opacity: 0.6; }
+        .cloud-2 { width: 280px; height: 65px; top: 20%; animation-duration: 28s; animation-delay: 3s;   opacity: 0.5; }
+        .cloud-3 { width: 150px; height: 40px; top: 35%; animation-duration: 22s; animation-delay: 7s;   opacity: 0.7; }
+        .cloud-4 { width: 230px; height: 55px; top: 50%; animation-duration: 32s; animation-delay: 1s;   opacity: 0.4; }
+        .cloud-5 { width: 170px; height: 45px; top: 65%; animation-duration: 25s; animation-delay: 10s;  opacity: 0.6; }
+        .cloud-6 { width: 250px; height: 60px; top: 78%; animation-duration: 18s; animation-delay: 5s;   opacity: 0.5; }
+        .cloud-7 { width: 180px; height: 48px; top: 90%; animation-duration: 30s; animation-delay: 14s;  opacity: 0.65; }
+
+        @keyframes floatCloud {
+            0%   { transform: translateX(-10vw); opacity: 0; }
+            5%   { opacity: 1; }
+            95%  { opacity: 1; }
+            100% { transform: translateX(100vw);  opacity: 0; }
+        }
+
+
+        /* Mode clair : nuages visibles, étoiles cachées */
+        .stars { display: none; }
+        .clouds { display: block; }
+
+        /* Mode sombre : étoiles visibles, nuages cachés */
+        body.dark-mode .stars { display: block; }
+        body.dark-mode .clouds { display: none; }
     </style>
 </head>
 <body>
@@ -713,14 +744,26 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
                 <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+<!-- Nuages et étoiles -->
 <div class="stars" id="stars"></div>
+<div class="clouds" id="clouds">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+    <div class="cloud cloud-6"></div>
+    <div class="cloud cloud-7"></div>
+</div>
+
         <!-- Hero Section -->
         <section id="home">
             <div class="hero-content">
@@ -737,7 +780,7 @@
         <h2 class="section-title">À propos de moi</h2>
         <div class="about-container">
             <div class="about-img">
-                <img src="https://via.placeholder.com/300" alt="Ma Photo">
+                <img src="Luke.jpg" alt="Ma Photo">
             </div>
             <div class="about-text">
                 <h3>Qui suis-je ?</h3>
@@ -765,16 +808,16 @@
         <h2 class="section-title">Compétences</h2>
         <div class="skills-container">
             <button class="skill-badge" onclick="openSkill('ue11')">
-            ⚙️ UE1.1 - Concevoir des systèmes industriels
+            ⚙️ UE1 - Concevoir des systèmes industriels
             </button>
         <button class="skill-badge" onclick="openSkill('ue22')">
-              🖥️ UE2.2 - Déployer des systèmes industriels
+              🖥️ UE2 - Déployer des systèmes industriels
             </button>
             <button class="skill-badge" onclick="openSkill('ue23')">
-                🔧 UE2.3 - Maintenir et gérer des systèmes industriels
+                🔧 UE3 - Maintenir et gérer des systèmes industriels
             </button>
             <button class="skill-badge" onclick="openSkill('ue24')">
-                🛡️ UE2.4 - Sécuriser des systèmes industriels
+                🛡️ UE4 - Sécuriser des systèmes industriels
             </button>
         </div>
     </section>
@@ -808,7 +851,7 @@
                     <span class="tag">CSS</span>
                     <span class="tag">JS</span>
                 </div>
-                <a href="https://luke1111111111.github.io/Site_recettes/" target="_blank" class="project-link">
+                <a href="https://luke1111111111.github.io/Les_recettes_de_Luke/" target="_blank" class="project-link">
                     Voir le site →
                 </a>
             </div>
@@ -851,7 +894,7 @@
             
             <div class="social-links">
                 <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://github.com/Luke1111111111">GitHub</a>
                 <a href="#">Twitter</a>
             </div>
         </div>
@@ -940,7 +983,7 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p></p>
                             </div>
                         </div>
 
@@ -960,7 +1003,13 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>L'apprentissage des bases de la programmation en Python, 
+                                à travers les cours, les TD, les exercices CodeRunner 
+                                et le projet Tic-Tac-Toe, m'a permis de développer 
+                                ma logique algorithmique et ma capacité à structurer un programme, 
+                                des compétences essentielles pour concevoir des systèmes industriels 
+                                automatisés et connectés.
+                                </p>
                             </div>
                         </div>
 
@@ -1042,6 +1091,7 @@
                     </ul>
                     Durant ce projet, j'ai pu peaufiner mes compétences de modélisations 3D sur le logiciel 
                     Solidworks, j'ai appris à imprimer mes pièces à l'imprimante 3D et découper des pièces à la découpe laser.
+                    Et j'ai pu développer mes premières compétences en languages Python
                     </div>
 
                     <h1>Semestre 2</h1>
@@ -1057,7 +1107,10 @@
                         </div>
                     </div>                    
 
+                    <div class="w3-panel w3-round-large w3-indigo">
                     <h3>SAE 2.2 - Mise en service et déploiement d'une solution de robotique</h3>
+
+                    </div>
                     <h3>SAE 2.4 - Amélioration de la production</h3>
                     <br>
 
@@ -1112,7 +1165,9 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>Les différentes activités réalisées en Python m'ont permis de comprendre comment développer, 
+                                tester et mettre en œuvre une application fonctionnelle, ce qui constitue une base 
+                                importante pour le déploiement de solutions industrielles numériques.</p>
                             </div>
                         </div>
 
@@ -1164,7 +1219,7 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>qddqdqqd.</p>
                             </div>
                         </div>
 
@@ -1194,7 +1249,9 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>La pratique régulière du débogage et de la correction d'erreurs lors des exercices 
+                                et du projet m'a aidé à acquérir une méthodologie de diagnostic et de maintenance, 
+                                utile pour assurer le bon fonctionnement des systèmes industriels</p>
                             </div>
                         </div>
 
@@ -1236,7 +1293,10 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>Étant donnée que l'anglais est la langue universelle, presque tout en informatique est en anglais,
+                                les langages de programmation, les commandes dans le terminal, les notices d'utilisation et "Readme",...
+                                il est primordiale de compredre l'anglais pour bien comprendre ce qui se passe. Ici j'ai pu 
+                                élargir mon vocabulaire en anglais.</p>
                             </div>
                         </div>
 
@@ -1246,7 +1306,15 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ton texte ici...</p>
+                                <p>Dans cette ressource j'ai pu apprendre à convertir des valeurs binaires et hexadécimales 
+                                en valeurs décimales et inversément puis d'appliquer ceci en codage UTF-8 qui permet de traduire
+                                une valeur binaire en un caractère informatique au format 8 bits. Ceci me permet de 
+                                comprendre la manière dont les données sont stockées, transmises et interprétées par les 
+                                systèmes numériques. Ces connaissances constituent également une 
+                                base importante en cybersécurité, car elles facilitent l'analyse de données brutes, 
+                                la compréhension des échanges réseau, l'identification d'éventuelles anomalies dans les données
+                                et l'étude de certaines techniques d'encodage utilisées lors
+                                des attaques ou des mécanismes de protection des systèmes d'information.</p>
                             </div>
                         </div>
 
@@ -1256,7 +1324,11 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>Dans ce module j'ai appris comment fonctionnent les circuits électriques notamment les lois 
+                                générales, le fonctionnement des diodes, des transistors et des condensateurs.
+                                Ces connaissances m'ont permis de visualiser comment les informations passent physiquement dans un système
+                                informatique et sont éssentielles en cybersécurité en particulier au niveau matériel
+                                afin de repérer les failles matérielles et de se protéger des attaques "hardware".</p>
                             </div>
                         </div>
 
@@ -1266,7 +1338,10 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ooga booga</p>
+                                <p>L'apprentissage de bonnes pratiques de programmation, telles que la gestion des entrées 
+                                utilisateur et la prévention des erreurs d'exécution, m'a sensibilisé à l'importance de 
+                                la fiabilité et de la sécurité des applications, des aspects essentiels dans les systèmes 
+                                industriels modernes.</p>
                             </div>
                         </div>
 
@@ -1286,7 +1361,14 @@
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ton texte ici...</p>
+                                <p>La sensibilisation à la cybersécurité m'a permis de mieux comprendre l'importance 
+                                    des bonnes pratiques de sécurité informatique. Grâce aux cours et aux travaux pratiques 
+                                    utilisant des outils tels que Nmap, Hydra et John the Ripper, j'ai découvert les principales
+                                     méthodes employées pour identifier des vulnérabilités et compromettre des systèmes
+                                      numériques. Ces connaissances m'ont permis de mieux appréhender les risques liés à la
+                                      sécurité des systèmes d'information et les mesures à mettre en œuvre pour les réduire, 
+                                      tout en étant conscient que le risque zéro n'existe pas.
+                                    </p>
                             </div>
                         </div>        
                     </div>
@@ -1317,15 +1399,16 @@
             document.getElementById('skill-body').innerHTML = skill.body;
             const overlay = document.getElementById('skill-overlay');
             overlay.style.display = 'block';
-            overlay.scrollTop = 0; // remet en haut l'overlay, pas window
-            backToTopBtn.classList.remove('visible'); // cache le bouton au départ
+            overlay.scrollTop = 0;
+            backToTopBtn.classList.remove('visible');
 
             if (document.body.classList.contains('dark-mode')) {
                 overlay.classList.add('dark-mode');
             }
 
-            const stars = document.getElementById('stars');
-            overlay.appendChild(stars);
+            // Déplace étoiles ET nuages dans l'overlay
+            overlay.appendChild(document.getElementById('stars'));
+            overlay.appendChild(document.getElementById('clouds'));
 
             document.querySelectorAll('#skill-body .accordion-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -1345,9 +1428,9 @@
             const overlay = document.getElementById('skill-overlay');
             overlay.style.display = 'none';
 
-            // Remet les étoiles dans le body
-            const stars = document.getElementById('stars');
-            document.body.appendChild(stars);
+            // Remet étoiles ET nuages dans le body
+            document.body.appendChild(document.getElementById('stars'));
+            document.body.appendChild(document.getElementById('clouds'));
         }
 
         function scrollToTop() {
