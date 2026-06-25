@@ -1951,9 +1951,46 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Nous n'avons pas été confronté à cette situation professionnelle durant la première année de notre formation</p>
+                                <div class="accordion">
+                                    <div class="accordion-item sae">
+                                        <button class="accordion-btn">
+                                            SAÉ 1.4 - Maintenance et gestion du code
+                                            <span class="accordion-icon">+</span>
+                                        </button>
+                                        <div class="accordion-content">
+                                            Lors de cette SAÉ, j'ai travaillé sur l'optimisation et la documentation du script 
+                                            Python de notre robot joueur de poker (issu de la SAÉ précédente). Bien que mon 
+                                            niveau initial en Python ait limité mon impact sur l'architecture globale du code, 
+                                            cette expérience a été très formatrice. J'ai compris les enjeux d'un programme 
+                                            modulaire, réutilisable et facilement maintenable. J'ai pu apporter ma contribution 
+                                            concrète au projet en développant le module d'acquisition d'images par la caméra 
+                                            (via OpenCV) et en structurant la documentation technique (Readme). Cette SAÉ m'a 
+                                            ainsi permis de consolider mes bases en programmation Python. 
+                                        </div>
+                                    </div>
+                                
+
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.3 - Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        Lors de cette SAÉ, j'ai été confronté à des opérations concrètes de maintenance 
+                                        électrique et d'automatisme. Mon travail a consisté à réaliser un diagnostic précis 
+                                        pour identifier l'origine d'une panne sur le système matériel, puis à intervenir en 
+                                        toute sécurité pour la réparer et remettre l'installation en service.
+                                    </div>
+                                </div>
+                                <p>En associant ces deux projets, j'ai pu aborder la maintenance des instruments de production 
+                                    sous deux angles complémentaires. D'un côté, la gestion rigoureuse du code (SAÉ 1.4) 
+                                    garantit la fiabilité et la mise à jour simplifiée de la partie logicielle et informatique. 
+                                    De l'autre, le dépannage sur site (SAÉ 2.3) assure la disponibilité opérationnelle des 
+                                    composants physiques. Cette double approche m'a permis d'acquérir les réflexes de base pour 
+                                    veiller au bon fonctionnement global d'un outil de production.</p>
                             </div>
                         </div>
+                    </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
@@ -1976,89 +2013,6 @@ const skillsData = {
                                 <p>Nous n'avons pas été confronté à cette situation professionnelle durant la première année de notre formation</p>
                             </div>
                         </div>                        
-
-                    </div>
-                                
-                                
-                    <h1>Saé</h1>
-                    <div class="accordion">
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 1.4 - Maintenance et gestion du code
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                Lors de cette Saé, j'ai dû optimiser et commenter le script python de notre SAÉ précédente donc
-                                celui du robot joueur de poker. Je considère cette SAÉ comme un échec de ma part car malgré le fait 
-                                que j'ai appris comment faire un programme modulaire, réutilisable et facile à comprendre, mon 
-                                manque de connaissance en python a fait que j'ai pas réussi à beaucoup impacter le travail réalisé 
-                                par mon groupe, je me suis tout de même occupé du programme de l'acquisition de l'image par la
-                                caméra et du Readme donc j'ai pu quand même améliorer mes connaissances en Python. 
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.3 - Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                Lors de cette SAÉ, j'ai réalisé de la maintenance électrique et d'automatisme, c'est à dire 
-                                que j'ai dû détecter une panne dans le système et la réparer.
-                            </div>
-                        </div>
-
-                    
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.4 - Amélioration de la production
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                    Lors de ce projet, nous devions automatiser la lecture et l'enregistrement des numéros 
-                                    de série sur des pièces usinées. Pour ce faire, nous devions créer une IHM où l'on 
-                                    importe les photos de numéros de série, ces photos sont ensuite traitées de différentes 
-                                    manières afin d'être examinées par un OCR qui renvoie à l'IHM les résultats sur un 
-                                    fichier texte. Étant donné que ce processus doit être accessible dans le réseau local 
-                                    de l'entreprise afin que chaque membre du personnel puisse y avoir accès depuis leur 
-                                    téléphone par exemple, nous sommes obligés de créer une API qui traite les requêtes, 
-                                    appelle les programmes de traitement d'image et de lecture et renvoie les réponses puis 
-                                    les stocke dans une base de données afin de réaliser un suivi des pièces usinées.
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Pipeline du fonctionnement de notre solution</p>
-                                            <img src="pipeline_project.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div> 
-                                    Pendant ce projet, je me suis d'abord occupé de réaliser les recherches sur les principales
-                                    manières de traiter les images en entreprise, après avoir fait des tests sur les images
-                                    pour déterminer quelles techniques on garde pour notre projet, je me suis occupé de créer
-                                    l'API qui sert à exécuter des programmes depuis une autre machine du même réseau local et
-                                    qui est aussi le programme "main", celui qui appelle les autres programmes réalisés 
-                                    par mes camarades afin de les coordonner. 
-
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Page web pour envoyer la requête</p>
-                                            <img src="requete.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div>  
-                                    
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Page web de la reception de la réponse</p>
-                                            <img src="reponse.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div>                                      
-                                </div>
-                            </div>
-                        </div>
                     </div>                                   
 
                     <br>           
@@ -2205,6 +2159,16 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.3 - Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        L'habilitation électrique m'a appris a détecter le danger sur une installation électrique et à le 
+                                        neutraliser.
+                                    </div>
+                                </div>
                                 <p>Ton texte ici...</p>
                             </div>
                         </div>
@@ -2215,7 +2179,50 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ton texte ici...</p>
+                            <div class="accordion">
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 1.1 - Bonnes pratiques de la cybersécurité
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                    La convergence entre les réseaux IT et OT expose aujourd'hui les outils de production à des 
+                                    cybermenaces critiques. Lors de la SAÉ 1.1, j'ai participé à une campagne de sensibilisation à 
+                                    l'hygiène informatique pour les équipes de terrain, articulée autour de trois livrables :
+                                            <br><br>
+                                            <ul>
+                                                <li><strong>Un guide A4 de poche :</strong> pour synthétiser la chaîne d'alerte et les 
+                                                    réflexes d'urgence en atelier lors d'un signalement d'incident.</li>
+                                                <li><strong>Une vidéo de formation (10 min) :</strong> expliquant l'importance et l'impact
+                                                    de ces premiers gestes vis-à-vis de la cybersécurité de l'entreprise.</li>
+                                                <li><strong>Un mémo informatique en anglais (IT Memo) :</strong> centré sur la force des 
+                                                    mots de passe. Ce document intègre la méthode de calcul de l'entropie, prouvant 
+                                                    mathématiquement l'impact de la complexité d'une chaîne de caractères face aux 
+                                                    attaques par force brute.</li>
+                                            </ul>
+                                            <br>
+                                            Ce projet m'a permis de valider des compétences en vulgarisation et en communication, tout 
+                                            en démontrant mon aptitude à produire une documentation technique rigoureuse en anglais.
+                                        <div style="text-align: center; margin: 2rem 0;">                                
+                                            <div class="img-card" style="display: inline-block;">
+                                                <p class="img-title">Notre affiche sur les bonnes pratiques à adopter</p>
+                                                <img src="INEVOBLUD.png" alt="Description"
+                                                onclick="openLightbox(this.src)"
+                                                style="cursor: zoom-in;">
+                                            </div>
+
+                                            <object data="memo_it.pdf" type="application/pdf" width="100%" height="600px">
+                                            <p>Votre navigateur ne peut pas afficher ce PDF directement. 
+                                            <a href="memo_it.pdf" target="_blank">Cliquez ici pour le télécharger</a>.
+                                            </p>
+                                            </object>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p>Cette SAÉ m'a été très formatrice pour apprendre à assurer la sécurité au niveau de l'IT,
+                                    la cybersécurité est un enjeu majeur</p>
                             </div>
                         </div>
                         
@@ -2225,9 +2232,59 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.4 - Amélioration de la production
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                            Lors de ce projet, nous devions automatiser la lecture et l'enregistrement des numéros 
+                                            de série sur des pièces usinées. Pour ce faire, nous devions créer une IHM où l'on 
+                                            importe les photos de numéros de série, ces photos sont ensuite traitées de différentes 
+                                            manières afin d'être examinées par un OCR qui renvoie à l'IHM les résultats sur un 
+                                            fichier texte. Étant donné que ce processus doit être accessible dans le réseau local 
+                                            de l'entreprise afin que chaque membre du personnel puisse y avoir accès depuis leur 
+                                            téléphone par exemple, nous sommes obligés de créer une API qui traite les requêtes, 
+                                            appelle les programmes de traitement d'image et de lecture et renvoie les réponses puis 
+                                            les stocke dans une base de données afin de réaliser un suivi des pièces usinées.
+                                            <div style="text-align: center; margin: 2rem 0;">
+                                                <div class="img-card" style="display: inline-block; ">
+                                                    <p class="img-title">Pipeline du fonctionnement de notre solution</p>
+                                                    <img src="pipeline_project.png" alt="Description"
+                                                    onclick="openLightbox(this.src)"
+                                                    style="cursor: zoom-in;">
+                                                </div>
+                                            </div> 
+                                            Pendant ce projet, je me suis d'abord occupé de réaliser les recherches sur les principales
+                                            manières de traiter les images en entreprise, après avoir fait des tests sur les images
+                                            pour déterminer quelles techniques on garde pour notre projet, je me suis occupé de créer
+                                            l'API qui sert à exécuter des programmes depuis une autre machine du même réseau local et
+                                            qui est aussi le programme "main", celui qui appelle les autres programmes réalisés 
+                                            par mes camarades afin de les coordonner. 
+
+                                            <div style="text-align: center; margin: 2rem 0;">
+                                                <div class="img-card" style="display: inline-block; ">
+                                                    <p class="img-title">Page web pour envoyer la requête</p>
+                                                    <img src="requete.png" alt="Description"
+                                                    onclick="openLightbox(this.src)"
+                                                    style="cursor: zoom-in;">
+                                                </div>
+                                            </div> 
+                                            
+                                            <div style="text-align: center; margin: 2rem 0;">
+                                                <div class="img-card" style="display: inline-block; ">
+                                                    <p class="img-title">Page web de la reception de la réponse</p>
+                                                    <img src="reponse.png" alt="Description"
+                                                    onclick="openLightbox(this.src)"
+                                                    style="cursor: zoom-in;">
+                                                </div>
+                                            </div>                                      
+                                        </div>                           
+                                    </div>
                                 <p>Ton texte ici...</p>
+                                </div>
                             </div>
-                        </div> 
+                        
                         
                         <div class="accordion-item">
                             <button class="accordion-btn">
@@ -2239,89 +2296,7 @@ const skillsData = {
                             </div>
                         </div> 
 
-                    </div>
-                    <h1>Saé</h1>
-                    <div class="accordion">
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 1.1 - Bonnes pratiques de la cybersécurité
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                            <div style="text-align: center; margin: 2rem 0;">
-                                <div class="img-card" style="display: inline-block;">
-                                    <p class="img-title">Notre affiche sur les bonnes pratiques à adopter</p>
-                                    <img src="INEVOBLUD.png" alt="Description"
-                                    onclick="openLightbox(this.src)"
-                                    style="cursor: zoom-in;">
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.3 - Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                L'habilitation électrique m'a appris a détecter le danger sur une installation électrique et à le 
-                                neutraliser.
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.4 - Amélioration de la production
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                    Lors de ce projet, nous devions automatiser la lecture et l'enregistrement des numéros 
-                                    de série sur des pièces usinées. Pour ce faire, nous devions créer une IHM où l'on 
-                                    importe les photos de numéros de série, ces photos sont ensuite traitées de différentes 
-                                    manières afin d'être examinées par un OCR qui renvoie à l'IHM les résultats sur un 
-                                    fichier texte. Étant donné que ce processus doit être accessible dans le réseau local 
-                                    de l'entreprise afin que chaque membre du personnel puisse y avoir accès depuis leur 
-                                    téléphone par exemple, nous sommes obligés de créer une API qui traite les requêtes, 
-                                    appelle les programmes de traitement d'image et de lecture et renvoie les réponses puis 
-                                    les stocke dans une base de données afin de réaliser un suivi des pièces usinées.
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Pipeline du fonctionnement de notre solution</p>
-                                            <img src="pipeline_project.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div> 
-                                    Pendant ce projet, je me suis d'abord occupé de réaliser les recherches sur les principales
-                                    manières de traiter les images en entreprise, après avoir fait des tests sur les images
-                                    pour déterminer quelles techniques on garde pour notre projet, je me suis occupé de créer
-                                    l'API qui sert à exécuter des programmes depuis une autre machine du même réseau local et
-                                    qui est aussi le programme "main", celui qui appelle les autres programmes réalisés 
-                                    par mes camarades afin de les coordonner. 
-
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Page web pour envoyer la requête</p>
-                                            <img src="requete.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div> 
-                                    
-                                    <div style="text-align: center; margin: 2rem 0;">
-                                        <div class="img-card" style="display: inline-block; ">
-                                            <p class="img-title">Page web de la reception de la réponse</p>
-                                            <img src="reponse.png" alt="Description"
-                                            onclick="openLightbox(this.src)"
-                                            style="cursor: zoom-in;">
-                                        </div>
-                                    </div>                                      
-                                </div>                           
-                            </div>
-                        </div>                        
-                    </div>
-                 
+                    </div>             
                     <br>
                 `
             }
